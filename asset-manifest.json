@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-paint/static/css/main.b74591dd.chunk.css",
+    "main.js": "/react-paint/static/js/main.bd5f22ec.chunk.js",
+    "main.js.map": "/react-paint/static/js/main.bd5f22ec.chunk.js.map",
+    "runtime-main.js": "/react-paint/static/js/runtime-main.4cf3ce49.js",
+    "runtime-main.js.map": "/react-paint/static/js/runtime-main.4cf3ce49.js.map",
+    "static/js/2.4ec8b5d0.chunk.js": "/react-paint/static/js/2.4ec8b5d0.chunk.js",
+    "static/js/2.4ec8b5d0.chunk.js.map": "/react-paint/static/js/2.4ec8b5d0.chunk.js.map",
+    "index.html": "/react-paint/index.html",
+    "precache-manifest.883460359e1b0d7ee520b4eb605d29f3.js": "/react-paint/precache-manifest.883460359e1b0d7ee520b4eb605d29f3.js",
+    "service-worker.js": "/react-paint/service-worker.js",
+    "static/css/main.b74591dd.chunk.css.map": "/react-paint/static/css/main.b74591dd.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4cf3ce49.js",
+    "static/js/2.4ec8b5d0.chunk.js",
+    "static/css/main.b74591dd.chunk.css",
+    "static/js/main.bd5f22ec.chunk.js"
+  ]
+}
