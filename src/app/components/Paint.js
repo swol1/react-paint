@@ -48,6 +48,7 @@ export default function Paint() {
         <Canvas
           color={activeColor}
           height={window.innerHeight - headerRef.current.offsetHeight - 15}
+          // ctx={canvasRef.current.getContext('2d')}
         />
       )}
       <div className={`window-size ${visible ? '' : 'hidden'}`}>

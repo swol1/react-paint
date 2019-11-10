@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import useWindowSize from './useWindowSize'
+import ClearButton from './ClearButton'
 
 export default function Canvas(props) {
   const [drawing, setDrawing] = useState(false);
@@ -10,7 +11,7 @@ export default function Canvas(props) {
   const ctx = useRef();
 
   useEffect(() => {
-    ctx.current = canvasRef.current.getContext('2d')
+    ctx.current = canvasRef.current.getContext('2d');
   }, []);
 
   const [windowWidth, windowHeight] = useWindowSize(() => {
@@ -25,17 +26,18 @@ export default function Canvas(props) {
       e.clientY - canvasRef.current.offsetTop
     ];
     if (drawing) {
-      ctx.current.lineTo(...coords)
-      ctx.current.stroke()
+      ctx.current.lineTo(...coords);
+      ctx.current.stroke();
     }
     if (props.handleMouseMove) {
-      props.handleMouseMove(...coords)
+      props.handleMouseMove(...coords);
     }
   }
+
   function startDrawing(e) {
     ctx.current.lineJoin = 'round';
     ctx.current.lineCap = 'round';
-    ctx.current.lineWidth = 10;
+    ctx.current.lineWidth = 6;
     ctx.current.strokeStyle = props.color;
     ctx.current.beginPath();
     // actual coordinates
@@ -45,18 +47,30 @@ export default function Canvas(props) {
     );
     setDrawing(true)
   }
+
   function stopDrawing() {
     ctx.current.closePath();
     setDrawing(false);
   }
 
-  return <canvas
-    ref={canvasRef}
-    width={props.width || width}
-    height={props.height || height}
-    onMouseDown={startDrawing}
-    onMouseUp={stopDrawing}
-    onMouseOut={stopDrawing}
-    onMouseMove={handleMouseMove}
-  />
+  const handleClear = useCallback(() => {
+    console.log('asda')
+    ctx.current = canvasRef.current.getContext('2d');
+    ctx.current.clearRect(0, 0, window.innerHeight, window.innerWidth)
+  });
+
+  return (
+    <>
+      <ClearButton cb={handleClear} />
+      <canvas
+        ref={canvasRef}
+        width={props.width || width}
+        height={props.height || height}
+        onMouseDown={startDrawing}
+        onMouseUp={stopDrawing}
+        onMouseOut={stopDrawing}
+        onMouseMove={handleMouseMove}
+      />
+    </>
+  )
 }
