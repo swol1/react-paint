@@ -39,7 +39,7 @@ export default class Canvas extends React.Component {
   }
 
   handleResize() {
-    this.setState({width: window.innerWidth, height: window.innerHeight})
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   startDrawing(e) {
@@ -53,12 +53,12 @@ export default class Canvas extends React.Component {
       e.clientX - this.canvasRef.current.offsetLeft,
       e.clientY - this.canvasRef.current.offsetTop
     )
-    this.setState({drawing: true})
+    this.setState({ drawing: true })
   }
 
   stopDrawing() {
     this.ctx.closePath()
-    this.setState({drawing: false})
+    this.setState({ drawing: false })
   }
 
   render() {
