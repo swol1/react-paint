@@ -1,6 +1,6 @@
 {
-  "homepage": "http://swol1.github.io/my-paint",
-  "name": "my-paint",
+  "homepage": "http://swol1.github.io/react-paint",
+  "name": "react-paint",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
