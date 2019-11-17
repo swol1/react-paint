@@ -22,8 +22,6 @@ header {
 
 header > div {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .header-name {
@@ -57,22 +55,22 @@ header > div {
     margin-left: 10px;
 }
 
-.button-refresh-colors {
-    border: 0;
-    background: none;
-    cursor: pointer;
-    font-size: 2rem;
-    margin-right: 10px;
-}
-
-.button-clear-colors {
-    font-size: 1.2rem;
-    padding: 5px 15px;
+.button-clear-colors, .button-refresh-colors {
+    font-size: 1.4rem;
     border: 2px solid;
-    margin: 5px 10px 0 0;
     float: right;
     background: antiquewhite;
     color: darkslategrey;
+}
+
+.button-clear-colors {
+    padding: 9px 18px;
+    margin: 0 0 auto auto;
+}
+
+.button-refresh-colors {
+    padding: 7px 16px;
+    margin: 0 0 auto 20px;
 }
 
 .color-picker {

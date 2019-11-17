@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { forwardRef, useState, useEffect, useRef, useImperativeHandle } from 'react'
 import useWindowSize from './useWindowSize'
-import ClearButton from './ClearButton'
 
-export default function Canvas(props) {
+const Canvas = forwardRef((props, ref) => {
   const [drawing, setDrawing] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
@@ -18,6 +17,14 @@ export default function Canvas(props) {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
   });
+
+  useImperativeHandle(ref, () => ({
+    handleClear() {
+      ctx.current = canvasRef.current.getContext('2d');
+      ctx.current.clearRect(0, 0, windowWidth, windowHeight)
+    }
+  }));
+
 
   function handleMouseMove(e) {
     // actual coordinates
@@ -53,15 +60,8 @@ export default function Canvas(props) {
     setDrawing(false);
   }
 
-  const handleClear = useCallback(() => {
-    console.log('asda')
-    ctx.current = canvasRef.current.getContext('2d');
-    ctx.current.clearRect(0, 0, window.innerHeight, window.innerWidth)
-  });
-
   return (
     <>
-      <ClearButton cb={handleClear} />
       <canvas
         ref={canvasRef}
         width={props.width || width}
@@ -73,4 +73,6 @@ export default function Canvas(props) {
       />
     </>
   )
-}
+});
+
+export default Canvas

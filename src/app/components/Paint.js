@@ -10,6 +10,7 @@ export default function Paint() {
   const [colors, setColors] = useState([]);
   const [activeColor, setActiveColor] = useState(null);
   const headerRef = useRef({ offsetHeight: 0 });
+
   const getColors = useCallback(() => {
     const baseColor = randomColor().slice(1);
     fetch(`https://www.thecolorapi.com/scheme?hex=${baseColor}&mode=monochrome`)
@@ -19,6 +20,7 @@ export default function Paint() {
         setActiveColor(res.colors[0].hex.value);
       })
   }, []);
+
   useEffect(getColors, []);
 
   const [visible, setVisible] = useState(false);
@@ -28,6 +30,8 @@ export default function Paint() {
     clearTimeout(timeoutId.current);
     timeoutId.current = setTimeout(() => setVisible(false), 500)
   });
+
+  const canvasRef = useRef();
 
   return (
     <div className="app">
@@ -42,13 +46,14 @@ export default function Paint() {
             setActiveColor={setActiveColor}
           />
           <RefreshButton cb={getColors} />
+          <button className="button-clear-colors" onClick={() => canvasRef.current.handleClear()}>Clear canvas</button>
         </div>
       </header>
       {activeColor && (
         <Canvas
           color={activeColor}
           height={window.innerHeight - headerRef.current.offsetHeight - 15}
-          // ctx={canvasRef.current.getContext('2d')}
+          ref={canvasRef}
         />
       )}
       <div className={`window-size ${visible ? '' : 'hidden'}`}>
