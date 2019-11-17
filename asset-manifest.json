@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-paint/static/css/main.23f48c25.chunk.css",
+    "main.css": "/react-paint/static/css/main.c577beff.chunk.css",
     "main.js": "/react-paint/static/js/main.42d2c7fb.chunk.js",
     "main.js.map": "/react-paint/static/js/main.42d2c7fb.chunk.js.map",
     "runtime-main.js": "/react-paint/static/js/runtime-main.4cf3ce49.js",
@@ -8,14 +8,14 @@
     "static/js/2.4ec8b5d0.chunk.js": "/react-paint/static/js/2.4ec8b5d0.chunk.js",
     "static/js/2.4ec8b5d0.chunk.js.map": "/react-paint/static/js/2.4ec8b5d0.chunk.js.map",
     "index.html": "/react-paint/index.html",
-    "precache-manifest.8ce32dac874342196665bbcdbcf35f9b.js": "/react-paint/precache-manifest.8ce32dac874342196665bbcdbcf35f9b.js",
+    "precache-manifest.4b75fd9442f77dde113449e79d8c84a3.js": "/react-paint/precache-manifest.4b75fd9442f77dde113449e79d8c84a3.js",
     "service-worker.js": "/react-paint/service-worker.js",
-    "static/css/main.23f48c25.chunk.css.map": "/react-paint/static/css/main.23f48c25.chunk.css.map"
+    "static/css/main.c577beff.chunk.css.map": "/react-paint/static/css/main.c577beff.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.4cf3ce49.js",
     "static/js/2.4ec8b5d0.chunk.js",
-    "static/css/main.23f48c25.chunk.css",
+    "static/css/main.c577beff.chunk.css",
     "static/js/main.42d2c7fb.chunk.js"
   ]
 }
